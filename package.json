@@ -1,13 +1,14 @@
 {
-  "name": "pm2-metrics",
-  "version": "1.0.47",
+  "name": "pm2-metrics-exporter-new",
+  "version": "1.0.1",
   "description": "Produces Metrics of Pm2 of running instances.little updated version of https://github.com/burningtree/pm2-prometheus-exporter, any PR is appriciated.",
   "dependencies": {
     "@pm2/io": "^4.1.4",
     "pino": "^5.12.0",
     "pm2": "^4.4.0",
     "pmx": "^1.6.7",
-    "prom-client": "^11.2.1"
+    "prom-client": "^11.2.1",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "ava": "^5.2.0",
@@ -50,10 +51,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saikatharryc/pm2-prometheus-exporter.git"
+    "url": "git+https://github.com/DeveloperMos/pm2-prometheus-exporter.git"
   },
   "config": {
-    "host": "0.0.0.0",
+    "host": "127.0.0.1",
     "port": 9209
   },
   "apps": [
@@ -79,9 +80,9 @@
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/saikatharryc/pm2-prometheus-exporter/issues"
+    "url": "https://github.com/DeveloperMos/pm2-prometheus-exporter/issues"
   },
-  "homepage": "https://github.com/saikatharryc/pm2-prometheus-exporter#readme",
+  "homepage": "https://github.com/DeveloperMos/pm2-prometheus-exporter#readme",
   "lint-staged": {
     "*.{js,jsx,mjs,ts,tsx,css,less,scss,json,graphql}": [
       "prettier --ignore-path ./.prettierignore",
@@ -126,10 +127,5 @@
       "global-require": 0
     },
     "space": true
-  },
-  "scripts": {
-    "lint": "xo --fix && remark . -qfo",
-    "precommit": "rm -rf coverage/*.* && lint-staged && npm test",
-    "test": "npm run lint && xo"
   }
 }
